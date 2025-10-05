@@ -1,61 +1,151 @@
-/* The styles for the elements */
-body { 
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 85%;
-    margin-left: 2em;
-    margin-right: 2em;
-    width: 400px;
+/* 🌿 Reset cơ bản */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-h1 {     
-    font-size: 140%;
-    color: teal;
-    margin-bottom: .5em;    
+
+/* 🌿 Toàn trang */
+body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    font-size: 90%;
+    background: linear-gradient(135deg, #e3f9f5, #c8f5e7);
+    color: #123;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 2rem;
 }
-h2 {     
-    font-size: 120%;
-    color: teal;
-    margin-bottom: .5em;    
+
+/* 🌿 Khung chính */
+.container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem 2.5rem;
+    width: 450px;
+    animation: fadeIn 0.6s ease-in-out;
 }
+
+/* 🌿 Tiêu đề */
+h1 {
+    font-size: 1.6rem;
+    color: #00897b; /* xanh ngọc đậm */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+h2 {
+    font-size: 1.2rem;
+    color: #00796b;
+    margin: 1rem 0 0.5rem;
+    border-left: 4px solid #009688;
+    padding-left: 8px;
+}
+
+/* 🌿 Label + Input */
 label {
-    float: left;
-    width: 7em;
+    display: inline-block;
+    width: 7.5em;
     margin-bottom: 0.5em;
-    font-weight: bold;
+    font-weight: 600;
+    color: #333;
 }
-input[type="text"], input[type="email"] {  /* An attribute selector */
-    width: 15em;
-    margin-left: 0.5em;    
-    margin-bottom: 0.5em;
-}
-span {
-    margin-left: 0.5em;    
-    margin-bottom: 0.5em;    
-}
-br {
-    clear: both;
-}
-
-/* The styles for the tables */
-table {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    border: 1px solid black;
-    text-align: left;
-    padding: .5em;
-}
-
-/* The styles for the classes */
-.pad_top {
-    padding-top: 0.25em;
-}
-.margin_left {
+input[type="text"],
+input[type="email"],
+select {
+    width: 16em;
+    padding: 7px;
     margin-left: 0.5em;
+    margin-bottom: 0.8em;
+    border: 1px solid #b2dfdb;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
-.align_left {
-    text-align: left;
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+    border-color: #009688;
+    outline: none;
+    box-shadow: 0 0 6px rgba(0, 150, 136, 0.4);
 }
-.align_right {
+
+/* 🌿 Span dữ liệu hiển thị */
+span {
+    display: inline-block;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* 🌿 Bảng dữ liệu */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.2rem;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+th {
+    background: #009688;
+    color: #fff;
     text-align: left;
+    padding: 0.7em;
+    font-weight: 600;
+}
+td {
+    padding: 0.6em;
+    border-top: 1px solid #e0f2f1;
+}
+tr:nth-child(even) td {
+    background: #f6fffd;
+}
+
+/* 🌿 Nút bấm */
+input[type="submit"], button {
+    background: linear-gradient(135deg, #009688, #26a69a);
+    color: #fff;
+    border: none;
+    padding: 0.6em 1.4em;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+input[type="submit"]:hover, button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* 🌿 Các class cũ vẫn giữ nguyên */
+.pad_top { padding-top: 0.25em; }
+.margin_left { margin-left: 0.5em; }
+.align_left { text-align: left; }
+.align_right { text-align: right; }
+
+/* 🌿 Hiệu ứng mượt */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌿 Responsive */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    label {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.2em;
+    }
+    input[type="text"],
+    input[type="email"],
+    select {
+        width: 100%;
+        margin-left: 0;
+    }
 }
