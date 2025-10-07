@@ -149,3 +149,38 @@ input[type="submit"]:hover, button:hover {
         margin-left: 0;
     }
 }
+
+/* ===== Fix bố cục form đăng ký ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    max-width: 400px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.3em;
+    font-weight: 600;
+    color: #00796b;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    width: 100%;
+    margin: 0;
+}
+
+/* ===== Fix tiêu đề và danh sách album ===== */
+h2, h3 {
+    display: block;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+ul, ol, a {
+    display: block;
+    margin-left: 1em;
+    margin-bottom: 0.3em;
+}
+
