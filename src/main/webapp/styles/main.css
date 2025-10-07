@@ -11,9 +11,7 @@ body {
     font-size: 90%;
     background: linear-gradient(135deg, #e3f9f5, #c8f5e7);
     color: #123;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
+    margin: 0;
     padding: 2rem;
 }
 
